@@ -1,0 +1,154 @@
+section[class="multistep-form"] {
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 10%);
+}
+
+form,
+section[id^="step-"] {
+    display: contents;
+}
+
+section[class="multistep-form"] h1 {
+    grid-column: 2/10;
+    grid-row: 2/10;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--marine-blue);
+}
+
+section[class="multistep-form"] h2 {
+    grid-column: 2/10;
+    grid-row: 3/10;
+    color: var(--cool-gray);
+}
+
+section[class="multistep-form"]  section[id="step-1"]  label:not(label[for^="next-step-"]) {
+    color: var(--purplish-blue);
+    font-size: 1.5rem;
+    font-weight: 500;
+    display: grid;
+    grid-template-rows: max-content;
+    position: relative;
+}
+
+label[for="fullname"] {
+    grid-column: 2/10;
+    grid-row: 4/5;
+}
+
+label[for="email"] {
+    grid-column: 2/10;
+    grid-row: 5/6;
+}
+
+label[for="phone-number"] {
+    grid-column: 2/10;
+    grid-row: 6/7;
+}
+
+input {
+    border-radius: 15px;
+    padding-inline-start: 20px;
+    border-width: 1px;
+}
+
+input::placeholder {
+    font-size: 1.5rem;
+    padding-inline-start: 20px;
+}
+
+label[for^="next-step-"] {
+    grid-column: 8/10;
+    grid-row: 9/10;
+    display: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    place-content: center;
+    border-radius: 20px;
+    background-color: var(--marine-blue);
+    color: var(--pastel-blue);
+    height: 70%;
+    cursor: pointer;
+    user-select: none;
+}
+label[for="next-step-1"] {
+    display: grid;
+}
+section[class="next"] {
+    display: contents;
+}
+section[class="step-2"]{
+    display: none;
+} 
+
+@container (inline-size < 1000px) {
+    section[class="multistep-form"] {
+        grid-template-columns: unset;
+        grid-template-rows: unset;
+        background: var(--pastel-blue);
+        position: relative;
+    }
+
+    section[id^="step-"] {
+        display: grid;
+        width: 80%;
+        place-self: center;
+        background: white;
+        position: absolute;
+        top: -5cqh;
+        border-radius: 15px;
+        padding: 5%;
+        padding-bottom: 15%;
+    }
+
+    section[class="multistep-form"] h1,
+    section[class="multistep-form"] h2,
+    section[id="step-1"] label {
+        grid-column: unset;
+        grid-row: unset;
+    }
+
+    section[class="multistep-form"] h1 {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    section[class="multistep-form"] h2 {
+        font-size: 1.2rem;
+    }
+
+    section[id="step-1"] input {
+        height: 50px;
+        border-radius: 5px;
+    }
+
+    section[class="multistep-form"]  section[id="step-1"]  label:not(label[for="next-step-1"]),
+    section[class="multistep-form"] input::placeholder {
+        font-size: 1rem;
+    }
+
+    section[class="next"] {
+        display: grid;
+        position: absolute;
+        bottom: 0;
+        width: 100cqw;
+        height: 100px;
+        background: white;
+        justify-content: end;
+        align-content: center;
+    }
+
+    label[for^="next-step-"] {
+        width: fit-content;
+        padding:10px 20px 10px 20px;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        display: grid;
+        place-content: center;
+        height: fit-content;
+        margin-right: 30px;
+        margin-top: 20px;
+    }
+
+}

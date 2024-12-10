@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <!-- Sidebar start -->
+    <section class="sidebar">
+      <nav>
+        <section class="step-container">
+          <label for="your-info" class="step">
+            <input type="radio" name="form-menu" id="your-info" checked>
+            <section class="step-title">
+              Your info
+            </section>
+          </label>
+          <label for="select-plan" class="step">
+            <input type="radio" name="form-menu" id="select-plan">
+            <section class="step-title">
+              Select plan
+            </section>
+          </label>
+          <label for="add-ons" class="step">
+            <input type="radio" name="form-menu" id="add-ons">
+            <section class="step-title">
+              Add-ons
+            </section>
+          </label>
+          <label for="summary" class="step">
+            <input type="radio" name="form-menu" id="summary">
+            <section class="step-title">
+              Summary
+            </section>
+          </label>
+        </section>
+      </nav>
+    </section>
+    <!-- Sidebar end -->
+
+    <section class="multistep-form">
+      <form action="">
+
+        <section id="step-1">
+          <h1>
+            Personal info
+          </h1>
+          <h2>
+            Please provide your name, email address, and phone number.
+          </h2>
+          <label for="fullname">Name
+            <input type="text" id="fullname" name="fullname" placeholder="e.g. Stephen King" required>
+          </label>
+          <label for="email">Email Address
+            <input type="email" id="email" name="email" placeholder="e.g. stephenking@lorem.com" required>
+          </label>
+          <label for="phone-number">Phone Number
+            <input type="tel" name="phone-number" id="phone-number" placeholder="e.g. +1 234 567 890" required>
+          </label>
+          <h2>
+
+
+        </section>
+
+        <section id="step-2">
+          <h1>
+            Select your plan
+          </h1>
+          <h2>
+            You have the option of monthly or yearly billing.
+          </h2>
+          <section class="plans">
+            <label for="arcade">
+              <svg>
+                <use href="#icon-arcade" />
+              </svg>
+              <h3>
+                Arcade
+              </h3>
+              <span class="2-months-free">2 months free</span>
+              <input type="radio" name="plan" id="arcade" checked>
+            </label>
+            <label for="advanced">
+              <svg>
+                <use href="#icon-advanced" />
+              </svg>
+              <h3>
+                Advanced
+              </h3>
+              <span class="2-months-free">2 months free</span>
+              <input type="radio" name="plan" id="advanced">
+            </label>
+            <label for="pro">
+              <svg>
+                <use href="#icon-pro" />
+              </svg>
+              <h3>
+                Pro
+              </h3>
+              <span class="2-months-free">2 months free</span>
+              <input type="radio" name="plan" id="pro">
+            </label>
+          </section>
+
+          <section class="month-year">
+            <span class="monthly">Monthly</span>
+            <section class="time-period">
+              <label for="month">
+                <input type="radio" name="month-year" id="month" checked>
+              </label>
+              <label for="year">
+                <input type="radio" name="month-year" id="year">
+              </label>
+            </section>
+            <span class="yearly">Year</span>
+          </section>
+
+        </section>
+
+      </form>
+      <section class="next">
+        <label for="next-step-1">
+          Next Step
+          <input type="radio" name="form-menu" id="next-step-1">
+        </label>
+        <label for="next-step-2">
+          Next Step
+          <input type="radio" name="form-menu" id="next-step-2">
+        </label>
+        <label for="next-step-3">
+          Next Step
+          <input type="radio" name="form-menu" id="next-step-3">
+        </label>
+        <label for="next-step-4">
+          Next Step
+          <input type="radio" name="form-menu" id="next-step-4">
+        </label>
+      </section>
+    </section>
+  </main>
+  <aside>
+
+
+    <!-- Step 1 start -->
+
+    <!-- Step 1 end -->
+
+    <!-- Step 2 start -->
+
+
+    Monthly
+    Yearly
+
+    Go Back
+    Next Step
+
+    <!-- Step 2 end -->
+
+    <!-- Step 3 start -->
+
+    Pick add-ons
+    Add-ons help enhance your gaming experience.
+
+    Online service
+    Access to multiplayer games
+    +$1/mo
+
+    Larger storage
+    Extra 1TB of cloud save
+    +$2/mo
+
+    Customizable Profile
+    Custom theme on your profile
+    +$2/mo
+
+    Go Back
+    Next Step
+
+    <!-- Step 3 end -->
+
+    <!-- Step 4 start -->
+
+    Finishing up
+    Double-check everything looks OK before confirming.
+
+    <!-- Dynamically add subscription and add-on selections here -->
+
+    Total (per month/year)
+
+    Go Back
+    Confirm
+
+    <!-- Step 4 end -->
+
+    <!-- Step 5 start -->
+
+    Thank you!
+
+    Thanks for confirming your subscription! We hope you have fun
+    using our platform. If you ever need support, please feel free
+    to email us at support@loremgaming.com.
+
+    <!-- Step 5 end -->
+
+  </aside>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/MaudePod">Maude Pod</a>.
+  </div>
+  <svg id="svgs">
+    <symbol id="icon-arcade" viewBox="0 0 40 40">
+      <g fill="none" fill-rule="evenodd">
+        <circle cx="20" cy="20" r="20" fill="#FFAF7E" />
+        <path fill="#FFF" fill-rule="nonzero"
+          d="M24.995 18.005h-3.998v5.998h-2v-5.998H15a1 1 0 0 0-1 1V29a1 1 0 0 0 1 1h9.995a1 1 0 0 0 1-1v-9.995a1 1 0 0 0-1-1Zm-5.997 8.996h-2v-1.999h2v2Zm2-11.175a2.999 2.999 0 1 0-2 0v2.18h2v-2.18Z" />
+      </g>
+    </symbol>
+    <symbol id="icon-advanced" viewBox="0 0 40 40">
+      <g fill="none" fill-rule="evenodd">
+        <circle cx="20" cy="20" r="20" fill="#F9818E" />
+        <path fill="#FFF" fill-rule="nonzero"
+          d="M25.057 15H14.944C12.212 15 10 17.03 10 19.885c0 2.857 2.212 4.936 4.944 4.936h10.113c2.733 0 4.943-2.08 4.943-4.936S27.79 15 25.057 15ZM17.5 20.388c0 .12-.108.237-.234.237h-1.552v1.569c0 .126-.138.217-.259.217H14.5c-.118 0-.213-.086-.213-.203v-1.583h-1.569c-.126 0-.217-.139-.217-.26v-.956c0-.117.086-.213.202-.213h1.584v-1.554c0-.125.082-.231.203-.231h.989c.12 0 .236.108.236.234v1.551h1.555c.125 0 .231.083.231.204v.988Zm5.347.393a.862.862 0 0 1-.869-.855c0-.472.39-.856.869-.856.481 0 .87.384.87.856 0 .471-.389.855-.87.855Zm1.9 1.866a.86.86 0 0 1-.87-.852.86.86 0 0 1 .87-.855c.48 0 .87.38.87.855a.86.86 0 0 1-.87.852Zm0-3.736a.862.862 0 0 1-.87-.854c0-.472.39-.856.87-.856s.87.384.87.856a.862.862 0 0 1-.87.854Zm1.899 1.87a.862.862 0 0 1-.868-.855c0-.472.389-.856.868-.856s.868.384.868.856a.862.862 0 0 1-.868.855Z" />
+      </g>
+    </symbol>
+    <symbol id="icon-pro" viewBox="0 0 40 40">
+      <g fill="none" fill-rule="evenodd">
+        <circle cx="20" cy="20" r="20" fill="#483EFF" />
+        <path fill="#FFF" fill-rule="nonzero"
+          d="M26.666 13H13.334A3.333 3.333 0 0 0 10 16.333v7.193a3.447 3.447 0 0 0 2.14 3.24c1.238.5 2.656.182 3.56-.8L18.52 23h2.96l2.82 2.966a3.2 3.2 0 0 0 3.56.8 3.447 3.447 0 0 0 2.14-3.24v-7.193A3.333 3.333 0 0 0 26.666 13Zm-9.333 6H16v1.333a.667.667 0 0 1-1.333 0V19h-1.333a.667.667 0 0 1 0-1.334h1.333v-1.333a.667.667 0 1 1 1.333 0v1.333h1.333a.667.667 0 1 1 0 1.334Zm7.333 2a2.667 2.667 0 1 1 0-5.333 2.667 2.667 0 0 1 0 5.333ZM26 18.333a1.333 1.333 0 1 1-2.667 0 1.333 1.333 0 0 1 2.667 0Z" />
+      </g>
+    </symbol>
+  </svg>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+section[class="sidebar"] {
+    width: 100%;
+    height: 100%;
+    container: sidebar / inline-size;
+    background: white;
+    display: grid;
+    place-items: center;
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+
+nav {
+    background: url(../assets/images/bg-sidebar-desktop.svg);
+    background-size: cover;
+    counter-reset: step-count;
+    display: grid;
+    height: 95%;
+    width: 95%;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 10%);
+}
+
+section[class="step-container"] {
+    display: grid;
+    width: 80%;
+    grid-column: 3;
+    grid-row: 2;
+}
+
+input[name="form-menu"] {
+    display: none;
+}
+
+label[class="step"] {
+    display: grid;
+    cursor: pointer;
+    container: step-title / inline-size;
+    height: 100px;
+    width: 200px;
+    /* margin: auto; */
+    counter-increment: step-count+1;
+}
+
+section[class="step-title"]::before {
+    display: grid;
+    align-content: end;
+    height: var(--step-size-unit);
+    content: "STEP 0" counter(step-count);
+    color: var(--cool-gray);
+}
+
+section[class="step-title"] {
+    display: grid;
+    text-transform: uppercase;
+    height: var(--step-size-unit);
+    font-size: 30cqi;
+    font-size: 1.5rem;
+    position: relative;
+    font-weight: 500;
+}
+
+section[class="step-title"]::after {
+    height: calc(2* var(--step-size-unit));
+    width: calc(2* var(--step-size-unit));
+    content: counter(step-count);
+    position: absolute;
+    border: 1px solid white;
+    color: white;
+    border-radius: 50%;
+    left: calc(-2 * var(--step-size-unit) - 20px);
+    font-size: 1.5rem;
+    display: grid;
+    place-items: center;
+}
+
+@container body (inline-size < 1000px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content;
+        grid-template-rows: 20cqh 90cqh;
+    }
+
+    section[class="sidebar"] {
+        height: 20svh;
+        border-top-left-radius: unset;
+        border-bottom-left-radius: unset;
+    }
+
+    nav {
+        background: url(../assets/images/bg-sidebar-mobile.svg);
+        background-size: cover;
+        counter-reset: step-count;
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-template-columns: unset;
+        grid-template-rows: unset;
+        grid-auto-flow: column;
+    }
+
+    section[class="step-container"] {
+        width: 80%;
+        height: 100%;
+        grid-column: unset;
+        grid-row: unset;
+        grid-auto-flow: column;
+        justify-content: space-evenly;
+        position: absolute;
+        top: 2cqh;
+        grid-auto-columns: calc(2.5 * var(--step-size-unit));
+        justify-content: center;
+        justify-self: center;
+    }
+
+    label[class="step"] {
+        height: 0;
+        width: 0;
+    }
+
+    section[class="step-title"]::before {
+        display: none;
+    }
+
+    section[class="step-title"] {
+        display: grid;
+        text-transform: uppercase;
+        height: var(--step-size-unit);
+        font-size: 30cqi;
+        font-size: 1.5rem;
+        font-size: 0;
+        position: relative;
+        font-weight: 500;
+    }
+
+    section[class="step-title"]::after {
+        position: unset;
+    }
+}

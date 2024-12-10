@@ -1,0 +1,220 @@
+section[class="plans"] {
+    grid-column: 2/10;
+    grid-row: 4/7;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+
+input[name="plan"],
+input[name="month-year"] {
+    display: none;
+}
+
+section[class="plans"] label {
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 10%);
+    border-radius: 10px;
+    background: var(--light-gray);
+}
+
+section[class="plans"] label svg {
+    grid-column: 2/4;
+    grid-row: 2/4;
+    height: 100%;
+    width: 100%;
+}
+
+section[class="plans"] label h3 {
+    grid-column: 2/4;
+    grid-row: 5/6;
+    font-weight: 500;
+    color: var(--marine-blue);
+    font-size: 2rem;
+    position: relative;
+}
+
+/* section[class="plans"] label span {
+    grid-column: 2/4;
+    grid-row: 8/9;
+    font-size: 1.6rem;
+    color: var(--cool-gray);
+    text-wrap: nowrap;
+} */
+
+section[class="month-year"] {
+    grid-row: 8/-1;
+    grid-column: 2/10;
+    display: grid;
+    height: max-content;
+    grid-auto-flow: column;
+    justify-content: center;
+    place-items: center;
+    gap: 10px;
+    background: var(--light-gray);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -3px;
+    padding: 10px 0px 10px 0px;
+}
+
+section[class="time-period"] {
+    display: grid;
+    width: 100px;
+    height: 50px;
+    grid-template-columns: 50px 50px;
+    background: var(--marine-blue);
+    border-radius: 30px;
+    color: var(--cool-gray);
+}
+
+section[class="time-period"]:has(input[id="month"]:checked) label[for="month"],
+section[class="time-period"]:has(input[id="year"]:checked) label[for="year"] {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: var(--cool-gray);
+    align-self: center;
+}
+
+label[for="month"] {
+    margin-left: 10px;
+}
+
+label[for="year"] {
+    margin-right: 10px;
+}
+
+section[class="multistep-form"]:has(input[id="month"]:checked) {
+    section[class="plans"] label[for="arcade"] h3::after {
+        content: "$9/mo";
+        display: grid;
+        font-size: 1.6rem;
+        color: var(--cool-gray);
+        text-wrap: nowrap;
+        position: absolute;
+    }
+
+    section[class="plans"] label[for="advanced"] h3::after {
+        content: "$12/mo";
+        display: grid;
+        font-size: 1.6rem;
+        color: var(--cool-gray);
+        text-wrap: nowrap;
+        position: absolute;
+    }
+
+    section[class="plans"] label[for="pro"] h3::after {
+        content: "$15/mo";
+        display: grid;
+        font-size: 1.6rem;
+        color: var(--cool-gray);
+        text-wrap: nowrap;
+        position: absolute;
+    }
+
+    span[class="monthly"] {
+        color: var(--marine-blue);
+    }
+}
+
+span[class="2-months-free"] {
+    grid-column: 2/9;
+    grid-row: 9/-1;
+    color: var(--purplish-blue);
+    display: none;
+}
+
+section[class="multistep-form"]:has(input[id="year"]:checked) {
+    section[class="plans"] label[for="arcade"] h3::after {
+        content: "$90/yr";
+        display: grid;
+        font-size: 1.6rem;
+        color: var(--cool-gray);
+        text-wrap: nowrap;
+        position: absolute;
+    }
+
+    section[class="plans"] label[for="advanced"] h3::after {
+        content: "$120/yr";
+        display: grid;
+        font-size: 1.6rem;
+        color: var(--cool-gray);
+        text-wrap: nowrap;
+        position: absolute;
+    }
+
+    section[class="plans"] label[for="pro"] h3::after {
+        content: "$150/yr";
+        display: grid;
+        font-size: 1.6rem;
+        color: var(--cool-gray);
+        text-wrap: nowrap;
+        position: absolute;
+    }
+
+    span[class="yearly"] {
+        color: var(--marine-blue);
+    }
+
+    span[class="2-months-free"] {
+        display: grid;
+    }
+}
+
+@container (inline-size < 1000px) {
+    section[class="plans"] {
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+    }
+
+    section[class="plans"],
+    section[class="plans"] label,
+    section[class="plans"] label svg,
+    section[class="plans"] label h3,
+    section[class="month-year"] {
+        grid-column: unset;
+        grid-row: unset;
+    }
+
+    section[class="plans"] label {
+        display: grid;
+        grid-template-columns: 100px auto;
+        gap: 10px;
+        grid-template-rows: unset;
+        border-radius: 10px;
+        background: var(--light-gray);
+        height: 120px;
+    }
+
+    span[class="2-months-free"] {
+        grid-column: 2;
+        grid-row: unset;
+        padding-bottom: 20px;
+
+    }
+
+    section[class="plans"] label svg {
+        transform: scale(60%);
+        margin: auto;
+    }
+
+    section[class="month-year"],
+    section[class="plans"] label h3 {
+        font-size: 1.6rem;
+    }
+
+    section[class="plans"] label h3::after {
+        font-size: 1.4rem;
+    }
+
+    section[class="next"] {
+        bottom: -10cqh;
+    }
+
+    section[class="month-year"] {
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+}
