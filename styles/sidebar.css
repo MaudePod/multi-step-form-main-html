@@ -37,7 +37,6 @@ label[class="step"] {
     container: step-title / inline-size;
     height: 100px;
     width: 200px;
-    /* margin: auto; */
     counter-increment: step-count+1;
 }
 

@@ -1,0 +1,44 @@
+section[class="thank-you"] {
+    grid-column: 2/10;
+    grid-row: 4/8;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+section[class="thank-you"] h1 {
+    grid-column: unset;
+    grid-row: unset;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--marine-blue);
+    margin: 0;
+}
+
+section[class="thank-you"] p {
+    color: var(--cool-gray);
+    font-size: 1.5rem;
+    width: 80%;
+    font-weight: 500;
+}
+
+@container (inline-size < 1000px) {
+    section[class="thank-you"] {
+        grid-column: unset;
+        grid-row: unset;
+        gap: 10px;
+    }
+
+    section[class="thank-you"] svg {
+        transform: scale(50%);
+    }
+
+    section[class="thank-you"] h1 {
+        font-size: 2rem;
+    }
+
+    section[class="thank-you"] p {
+        font-size: 1.2rem;
+    }
+}

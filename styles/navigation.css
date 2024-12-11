@@ -1,3 +1,5 @@
+main:has(input[id="next-step-5"]:checked),
+main:has(input[id="back-step-1"]:checked),
 main:has(input[id="your-info"]:checked) {
   section[id^="step-"] {
     display: none;
@@ -5,6 +7,10 @@ main:has(input[id="your-info"]:checked) {
 
   section[id="step-1"] {
     display: contents;
+  }
+
+  label[for^="back-step-"] {
+    display: none;
   }
 
   label[for^="next-step-"] {
@@ -20,6 +26,8 @@ main:has(input[id="your-info"]:checked) {
     color: var(--marine-blue);
   }
 }
+
+main:has(input[id="back-step-2"]:checked),
 main:has(input[id="change-plan"]:checked),
 main:has(input[id="next-step-1"]:checked),
 main:has(input[id="select-plan"]:checked) {
@@ -29,6 +37,14 @@ main:has(input[id="select-plan"]:checked) {
 
   section[id="step-2"] {
     display: contents;
+  }
+
+  label[for^="back-step-"] {
+    display: none;
+  }
+
+  label[for="back-step-1"] {
+    display: grid;
   }
 
   label[for^="next-step-"] {
@@ -44,6 +60,8 @@ main:has(input[id="select-plan"]:checked) {
     color: var(--marine-blue);
   }
 }
+
+main:has(input[id="back-step-3"]:checked),
 main:has(input[id="next-step-2"]:checked),
 main:has(input[id="add-ons"]:checked) {
   section[id^="step-"] {
@@ -52,6 +70,14 @@ main:has(input[id="add-ons"]:checked) {
 
   section[id="step-3"] {
     display: contents;
+  }
+
+  label[for^="back-step-"] {
+    display: none;
+  }
+
+  label[for="back-step-2"] {
+    display: grid;
   }
 
   label[for^="next-step-"] {
@@ -67,6 +93,7 @@ main:has(input[id="add-ons"]:checked) {
     color: var(--marine-blue);
   }
 }
+
 main:has(input[id="next-step-3"]:checked),
 main:has(input[id="summary"]:checked) {
   section[id^="step-"] {
@@ -75,6 +102,14 @@ main:has(input[id="summary"]:checked) {
 
   section[id="step-4"] {
     display: contents;
+  }
+
+  label[for^="back-step-"] {
+    display: none;
+  }
+
+  label[for="back-step-3"] {
+    display: grid;
   }
 
   label[for^="next-step-"] {
@@ -91,6 +126,29 @@ main:has(input[id="summary"]:checked) {
   }
 }
 
+main:has(input[id="next-step-4"]:checked) {
+  section[id^="step-"] {
+    display: none;
+  }
+
+  section[id="step-5"] {
+    display: contents;
+  }
+
+  label[for^="back-step-"] {
+    display: none;
+  }
+
+  label[for^="next-step-"] {
+    display: none;
+  }
+
+  label[for="summary"] section[class="step-title"]::after {
+    background: var(--light-blue);
+    color: var(--marine-blue);
+  }
+}
+
 section[class="pick-add-ons"] label:has(input:checked),
 section[class="plans"] label:has(input:checked) {
   border: 2px solid var(--purplish-blue);
@@ -98,11 +156,16 @@ section[class="plans"] label:has(input:checked) {
 }
 
 @container (inline-size < 1000px) {
+
+  main:has(input[id="back-step-1"]:checked),
+  main:has(input[id="next-step-5"]:checked),
   main:has(input[id="your-info"]:checked) {
     section[id="step-1"] {
       display: grid;
     }
   }
+
+  main:has(input[id="back-step-2"]:checked),
   main:has(input[id="change-plan"]:checked),
   main:has(input[id="next-step-1"]:checked),
   main:has(input[id="select-plan"]:checked) {
@@ -110,6 +173,8 @@ section[class="plans"] label:has(input:checked) {
       display: grid;
     }
   }
+
+  main:has(input[id="back-step-3"]:checked),
   main:has(input[id="next-step-2"]:checked),
   main:has(input[id="add-ons"]:checked) {
     section[id="step-3"] {
@@ -121,6 +186,16 @@ section[class="plans"] label:has(input:checked) {
   main:has(input[id="summary"]:checked) {
     section[id="step-4"] {
       display: grid;
+    }
+  }
+
+  main:has(input[id="next-step-4"]:checked) {
+    section[id="step-5"] {
+      display: grid;
+    }
+
+    section[class="next"] {
+      display: none;
     }
   }
 }

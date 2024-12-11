@@ -12,6 +12,20 @@
     --alabaster: hsl(231, 100%, 99%);
     --step-size-unit: 25px;
     --border-radius: 15px;
+    /*Prices*/
+    --arcade-monthly: 9;
+    --advanced-monthly: 12;
+    --pro-monthly: 15;
+    --online-service-monthly: 1;
+    --larger-storage-monthly: 2;
+    --customizable-profile-monthly: 2;
+
+    --arcade-yearly: 90;
+    --advanced-yearly: 120;
+    --pro-yearly: 150;
+    --online-service-yearly: 10;
+    --larger-storage-yearly: 20;
+    --customizable-profile-yearly: 20;
 }
 
 @font-face {
@@ -37,12 +51,12 @@ main {
     grid-template-columns: 30cqw 70cqw;
 }
 
-aside {
-    display: none;
-}
 
 div[class="attribution"] {
-    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    left: 0;
 }
 
 svg[id="svgs"] {
@@ -52,5 +66,9 @@ svg[id="svgs"] {
 @media (width < 1000px) {
     body {
         background: var(--pastel-blue);
+    }
+
+    div[class="attribution"] {
+        display: none;
     }
 }

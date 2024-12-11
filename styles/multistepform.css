@@ -25,7 +25,7 @@ section[class="multistep-form"] h2 {
     color: var(--cool-gray);
 }
 
-section[class="multistep-form"]  section[id="step-1"]  label:not(label[for^="next-step-"]) {
+section[class="multistep-form"] section[id="step-1"] label:not(label[for^="next-step-"], label[for^="back-step-"]) {
     color: var(--purplish-blue);
     font-size: 1.5rem;
     font-weight: 500;
@@ -68,21 +68,42 @@ label[for^="next-step-"] {
     font-weight: 600;
     place-content: center;
     border-radius: 20px;
-    background-color: var(--marine-blue);
+    background: var(--marine-blue);
     color: var(--pastel-blue);
     height: 70%;
     cursor: pointer;
     user-select: none;
 }
+
+label[for^="back-step-"] {
+    grid-column: 2;
+    grid-row: 9/10;
+    display: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    place-content: center;
+    color: var(--cool-gray);
+    height: 70%;
+    cursor: pointer;
+    user-select: none;
+}
+
 label[for="next-step-1"] {
     display: grid;
 }
+
+label[for="next-step-5"] {
+    background: var(--light-gray);
+    color: var(--cool-gray);
+}
+
 section[class="next"] {
     display: contents;
 }
-section[class="step-2"]{
+
+section[class="step-2"] {
     display: none;
-} 
+}
 
 @container (inline-size < 1000px) {
     section[class="multistep-form"] {
@@ -125,25 +146,36 @@ section[class="step-2"]{
         border-radius: 5px;
     }
 
-    section[class="multistep-form"]  section[id="step-1"]  label:not(label[for="next-step-1"]),
+    section[class="multistep-form"] section[id="step-1"] label:not(label[for="next-step-1"]),
     section[class="multistep-form"] input::placeholder {
         font-size: 1rem;
     }
 
     section[class="next"] {
         display: grid;
-        position: absolute;
+        position: fixed;
         bottom: 0;
         width: 100cqw;
         height: 100px;
         background: white;
-        justify-content: end;
+        justify-content: space-between;
         align-content: center;
+    }
+
+    label[for^="back-step-"] {
+        width: fit-content;
+        padding: 10px 20px 10px 20px;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        place-content: center;
+        height: fit-content;
+        margin-left: 30px;
+        margin-top: 20px;
     }
 
     label[for^="next-step-"] {
         width: fit-content;
-        padding:10px 20px 10px 20px;
+        padding: 10px 20px 10px 20px;
         font-size: 1.2rem;
         border-radius: 10px;
         place-content: center;
@@ -151,5 +183,4 @@ section[class="step-2"]{
         margin-right: 30px;
         margin-top: 20px;
     }
-
 }

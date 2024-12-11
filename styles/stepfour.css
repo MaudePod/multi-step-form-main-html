@@ -4,22 +4,25 @@ section[class="summary"] {
     display: grid;
     gap: 10px;
     background: var(--light-gray);
+    box-sizing: border-box;
+    grid-template-rows: max-content;
+    padding: 15px;
+    position: relative;
+    counter-reset: total 0;
 }
 
 section[class="summary-plan"] {
     display: grid;
-    box-sizing: border-box;
-    padding: 15px;
+    border-bottom: 1px solid var(--cool-gray);
+    padding-bottom: 20px;
+    width: 90%;
+    justify-self: center;
 }
 
 section[class="summary-plan-details"] {
     display: grid;
-    width: 90%;
-    height: 80%;
-    place-self: center;
     grid-template-areas: "plan cost"
         "change-plan cost";
-    border-bottom: 1px solid var(--cool-gray);
 }
 
 label[for="change-plan"] {
@@ -36,16 +39,67 @@ section[class="summary-plan-details"] h3 {
     margin: 0;
 }
 
-
-span[class="online-service"], 
+span[class="online-service"],
 span[class="larger-storage"],
-span[class="customizable-profile"] { display: none;}
+span[class="customizable-profile"] {
+    display: none;
+    color: var(--cool-gray);
+    font-weight: 600;
+    font-size: 1.4rem;
+    position: relative;
+    width: 90%;
+    justify-self: center;
+}
+
+main:has(input[id="online-service"]:checked) {
+    span[class="online-service"] {
+        display: grid;
+    }
+}
+
+main:has(input[id="larger-storage"]:checked) {
+    span[class="larger-storage"] {
+        display: grid;
+    }
+}
+
+main:has(input[id="customizable-profile"]:checked) {
+    span[class="customizable-profile"] {
+        display: grid;
+    }
+}
 
 main:has(input[id="month"]:checked) {
 
+    span[class="online-service"]::after {
+        counter-reset: online-service-monthly var(--online-service-monthly);
+        content: "+$" counter(online-service-monthly) "/mo";
+        counter-increment: total calc(var(--online-service-monthly) * 1);
+        right: 0;
+        position: absolute;
+    }
+
+    span[class="larger-storage"]::after {
+        counter-reset: larger-storage-monthly var(--larger-storage-monthly);
+        content: "+$" counter(larger-storage-monthly) "/mo";
+        counter-increment: total var(--larger-storage-monthly);
+        right: 0;
+        position: absolute;
+    }
+
+    span[class="customizable-profile"]::after {
+        counter-reset: customizable-profile-monthly var(--customizable-profile-monthly);
+        content: "+$" counter(customizable-profile-monthly) "/mo";
+        counter-increment: total var(--customizable-profile-monthly);
+        right: 0;
+        position: absolute;
+    }
+
     section[class="multistep-form"]:has(input[id="arcade"]:checked) {
         section[class="summary-plan-details"]::after {
-            content: "$9/mo";
+            counter-reset: arcade-monthly var(--arcade-monthly);
+            content: "$" counter(arcade-monthly) "/mo";
+            counter-increment: total var(--arcade-monthly);
             font-size: 1.5rem;
             color: var(--marine-blue);
             font-weight: 600;
@@ -59,13 +113,262 @@ main:has(input[id="month"]:checked) {
             font-weight: 600;
             grid-area: plan;
         }
+
     }
 
-    section[class="multistep-form"]:has(input[id="advanced"]:checked) h3::after {
-        content: "$12/mo";
+    section[class="multistep-form"]:has(input[id="advanced"]:checked) {
+        section[class="summary-plan-details"]::after {
+            counter-reset: advanced-monthly var(--advanced-monthly);
+            content: "$" counter(advanced-monthly) "/mo";
+            counter-increment: total var(--advanced-monthly);
+            font-size: 1.5rem;
+            color: var(--marine-blue);
+            font-weight: 600;
+            justify-self: end;
+            align-self: center;
+            grid-area: cost;
+        }
+
+        section[class="summary-plan-details"] h3::before {
+            content: "Advanced (Monthly)";
+            font-weight: 600;
+            grid-area: plan;
+        }
     }
 
-    section[class="multistep-form"]:has(input[id="pro"]:checked) h3::after {
-        content: "$15/mo";
+    section[class="multistep-form"]:has(input[id="pro"]:checked) {
+        section[class="summary-plan-details"]::after {
+            counter-reset: pro-monthly var(--pro-monthly);
+            content: "$" counter(pro-monthly) "/mo";
+            counter-increment: total var(--pro-monthly);
+            font-size: 1.5rem;
+            color: var(--marine-blue);
+            font-weight: 600;
+            justify-self: end;
+            align-self: center;
+            grid-area: cost;
+        }
+
+        section[class="summary-plan-details"] h3::before {
+            content: "Pro (Monthly)";
+            font-weight: 600;
+            grid-area: plan;
+        }
+    }
+
+
+}
+
+main:has(input[id="year"]:checked) {
+
+    span[class="online-service"]::after {
+        counter-reset: online-service-yearly var(--online-service-yearly);
+        content: "+$" counter(online-service-yearly) "/yr";
+        counter-increment: total var(--online-service-yearly);
+        right: 0;
+        position: absolute;
+    }
+
+    span[class="larger-storage"]::after {
+        counter-reset: larger-storage-yearly var(--larger-storage-yearly);
+        content: "+$" counter(larger-storage-yearly) "/yr";
+        counter-increment: total var(--larger-storage-yearly);
+        right: 0;
+        position: absolute;
+    }
+
+    span[class="customizable-profile"]::after {
+        counter-reset: customizable-profile-yearly var(--customizable-profile-yearly);
+        content: "+$" counter(customizable-profile-yearly) "/yr";
+        counter-increment: total var(--customizable-profile-yearly);
+        right: 0;
+        position: absolute;
+    }
+
+    section[class="multistep-form"]:has(input[id="arcade"]:checked) {
+        section[class="summary-plan-details"]::after {
+            counter-reset: arcade-yearly var(--arcade-yearly);
+            content: "$" counter(arcade-yearly) "/yr";
+            counter-increment: total var(--arcade-yearly);
+            font-size: 1.5rem;
+            color: var(--marine-blue);
+            font-weight: 600;
+            justify-self: end;
+            align-self: center;
+            grid-area: cost;
+        }
+
+        section[class="summary-plan-details"] h3::before {
+            content: "Arcade (Yearly)";
+            font-weight: 600;
+            grid-area: plan;
+        }
+
+    }
+
+    section[class="multistep-form"]:has(input[id="advanced"]:checked) {
+        section[class="summary-plan-details"]::after {
+            counter-reset: advanced-yearly var(--advanced-yearly);
+            content: "$" counter(advanced-yearly) "/yr";
+            counter-increment: total var(--advanced-yearly);
+            font-size: 1.5rem;
+            color: var(--marine-blue);
+            font-weight: 600;
+            justify-self: end;
+            align-self: center;
+            grid-area: cost;
+        }
+
+        section[class="summary-plan-details"] h3::before {
+            content: "Advanced (Yearly)";
+            font-weight: 600;
+            grid-area: plan;
+        }
+    }
+
+    section[class="multistep-form"]:has(input[id="pro"]:checked) {
+        section[class="summary-plan-details"]::after {
+            counter-reset: pro-yearly var(--pro-yearly);
+            content: "$" counter(pro-yearly) "/yr";
+            counter-increment: total var(--pro-yearly);
+            font-size: 1.5rem;
+            color: var(--marine-blue);
+            font-weight: 600;
+            justify-self: end;
+            align-self: center;
+            grid-area: cost;
+        }
+
+        section[class="summary-plan-details"] h3::before {
+            content: "Pro (Yearly)";
+            font-weight: 600;
+            grid-area: plan;
+        }
+    }
+
+
+}
+
+span[class="total"] {
+    background: white;
+    position: absolute;
+    bottom: -20px;
+    display: grid;
+    width: 90%;
+    justify-self: center;
+}
+
+main:has(input[id="month"]:checked) {
+
+    span[class="total"]::after {
+        content: "+$" counter(total) "/mo";
+        right: 0;
+        position: absolute;
+        font-size: 2rem;
+        color: var(--purplish-blue);
+        font-weight: 600;
+    }
+
+    span[class="total"]::before {
+        content: "Total (per month)";
+        left: 0;
+        position: absolute;
+        font-size: 1.8rem;
+        color: var(--cool-gray);
+        font-weight: 600;
+    }
+}
+
+main:has(input[id="year"]:checked) {
+
+    span[class="total"]::after {
+        content: "+$" counter(total) "/yr";
+        right: 0;
+        position: absolute;
+        font-size: 2rem;
+        color: var(--purplish-blue);
+        font-weight: 600;
+    }
+
+    span[class="total"]::before {
+        content: "Total (per year)";
+        left: 0;
+        position: absolute;
+        font-size: 1.8rem;
+        color: var(--cool-gray);
+        font-weight: 600;
+    }
+}
+
+@container (inline-size < 1000px) {
+    section[class="summary"] {
+        grid-column: unset;
+        grid-row: unset;
+        padding: 10px;
+    }
+
+    section[class="summary-plan-details"] h3 {
+        font-size: 1rem;
+
+    }
+
+    label[for="change-plan"] {
+        font-size: 0.9rem;
+    }
+
+    main:has(input[id="month"]:checked) {
+
+        section[class="multistep-form"]:has(input[id="arcade"]:checked),
+        section[class="multistep-form"]:has(input[id="advanced"]:checked),
+        section[class="multistep-form"]:has(input[id="pro"]:checked) {
+            section[class="summary-plan-details"]::after {
+                font-size: 1rem;
+            }
+        }
+
+        span[class="online-service"],
+        span[class="larger-storage"],
+        span[class="customizable-profile"],
+        span[class="online-service"]::after,
+        span[class="larger-storage"]::after,
+        span[class="customizable-profile"]::after,
+        span[class="online-service"]::before,
+        span[class="larger-storage"]::before,
+        span[class="customizable-profile"]::before {
+            font-size: 1rem;
+        }
+
+        span[class="total"]::before,
+        span[class="total"]::after {
+            font-size: 1.2rem;
+        }
+    }
+
+    main:has(input[id="year"]:checked) {
+
+        section[class="multistep-form"]:has(input[id="arcade"]:checked),
+        section[class="multistep-form"]:has(input[id="advanced"]:checked),
+        section[class="multistep-form"]:has(input[id="pro"]:checked) {
+            section[class="summary-plan-details"]::after {
+                font-size: 1rem;
+            }
+        }
+
+        span[class="online-service"],
+        span[class="larger-storage"],
+        span[class="customizable-profile"],
+        span[class="online-service"]::after,
+        span[class="larger-storage"]::after,
+        span[class="customizable-profile"]::after,
+        span[class="online-service"]::before,
+        span[class="larger-storage"]::before,
+        span[class="customizable-profile"]::before {
+            font-size: 1rem;
+        }
+
+        span[class="total"]::before,
+        span[class="total"]::after {
+            font-size: 1.2rem;
+        }
     }
 }

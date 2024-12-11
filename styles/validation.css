@@ -60,4 +60,19 @@ main:has(section[id="step-1"] input:user-invalid) {
     label[class="step"]:nth-of-type(1) section[class="step-title"] {
         color: var(--strawberry-red);
     }
+
+}
+
+body:has(section[id="step-1"] input:invalid) {
+
+    main:has(input[id="next-step-3"]:checked),
+    main:has(input[id="summary"]:checked) {
+        label[for="next-step-4"] {
+            display: none;
+        }
+
+        label[for="next-step-5"] {
+            display: grid;
+        }
+    }
 }

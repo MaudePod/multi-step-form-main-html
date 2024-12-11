@@ -39,21 +39,24 @@
 
     section[class="multistep-form"]:has(input[id="month"]:checked) {
         section[class="pick-add-ons"] label[for="online-service"]::after {
-            content: "+$1/mo";
+            counter-reset: online-service-monthly var(--online-service-monthly);
+            content: "+$" counter(online-service-monthly) "/mo";
             position: absolute;
             right: 50px;
             color: var(--purplish-blue);
         }
 
-        section[class="pick-add-ons"] label[for="layer-storage"]::after {
-            content: "+$2/mo";
+        section[class="pick-add-ons"] label[for="larger-storage"]::after {
+            counter-reset: larger-storage-monthly var(--larger-storage-monthly);
+            content: "+$" counter(larger-storage-monthly) "/mo";
             position: absolute;
             right: 50px;
             color: var(--purplish-blue);
         }
 
         section[class="pick-add-ons"] label[for="customizable-profile"]::after {
-            content: "+$2/mo";
+            counter-reset: customizable-profile-monthly var(--customizable-profile-monthly);
+            content: "+$" counter(customizable-profile-monthly) "/mo";
             position: absolute;
             right: 50px;
             color: var(--purplish-blue);
@@ -62,21 +65,24 @@
 
     section[class="multistep-form"]:has(input[id="year"]:checked) {
         section[class="pick-add-ons"] label[for="online-service"]::after {
-            content: "+$10/yr";
+            counter-reset: online-service-yearly var(--online-service-yearly);
+            content: "+$" counter(online-service-yearly) "/yr";
             position: absolute;
             right: 50px;
             color: var(--purplish-blue);
         }
 
-        section[class="pick-add-ons"] label[for="layer-storage"]::after {
-            content: "+$20/yr";
+        section[class="pick-add-ons"] label[for="larger-storage"]::after {
+            counter-reset: larger-storage-yearly var(--larger-storage-yearly);
+            content: "+$" counter(larger-storage-yearly) "/yr";
             position: absolute;
             right: 50px;
             color: var(--purplish-blue);
         }
 
         section[class="pick-add-ons"] label[for="customizable-profile"]::after {
-            content: "+$20/yr";
+            counter-reset: customizable-profile-yearly var(--customizable-profile-yearly);
+            content: "+$" counter(customizable-profile-yearly) "/yr";
             position: absolute;
             right: 50px;
             color: var(--purplish-blue);
@@ -111,16 +117,19 @@
         }
 
         section[class="multistep-form"]:has(input[id="month"]:checked) {
+
             section[class="pick-add-ons"] label[for="online-service"]::after,
-            section[class="pick-add-ons"] label[for="layer-storage"]::after,
+            section[class="pick-add-ons"] label[for="larger-storage"]::after,
             section[class="pick-add-ons"] label[for="customizable-profile"]::after {
                 font-size: 0.8rem;
                 right: 15px;
             }
         }
+
         section[class="multistep-form"]:has(input[id="year"]:checked) {
+
             section[class="pick-add-ons"] label[for="online-service"]::after,
-            section[class="pick-add-ons"] label[for="layer-storage"]::after,
+            section[class="pick-add-ons"] label[for="larger-storage"]::after,
             section[class="pick-add-ons"] label[for="customizable-profile"]::after {
                 font-size: 0.8rem;
                 right: 15px;
