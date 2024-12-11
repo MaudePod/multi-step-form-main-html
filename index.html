@@ -26,6 +26,8 @@
 
 <body>
   <main>
+    <form action="">
+    
     <!-- Sidebar start -->
     <section class="sidebar">
       <nav>
@@ -60,7 +62,6 @@
     <!-- Sidebar end -->
 
     <section class="multistep-form">
-      <form action="">
 
         <section id="step-1">
           <h1>
@@ -137,8 +138,66 @@
           </section>
 
         </section>
+        <section id="step-3">
+          <h1>
+            Pick add-ons
+          </h1>
+          <h2>
+            Add-ons help enhance your gaming experience.
+          </h2>
+          <section class="pick-add-ons">
+            <label for="online-service">
+              <input type="checkbox" name="add-ons" id="online-service">
+              <section class="add-on">
+                <h3>
+                  Online service
+                </h3>
+                <span>
+                  Access to multiplayer games
+                </span>
+              </section>
+            </label>
+            <label for="layer-storage">
+              <input type="checkbox" name="add-ons" id="layer-storage">
+              <section class="add-on">
+                <h3>
+                  Larger storage
+                </h3>
+                <span>
+                  Extra 1TB of cloud save
+                </span>
+              </section>
+            </label>
+            <label for="customizable-profile">
+              <input type="checkbox" name="add-ons" id="customizable-profile">
+              <section class="add-on">
+                <h3>Customizable Profile</h3>
+                <span>Custom theme on your profile</span>
+              </section>
+            </label>
+          </section>
+        </section>
+        <section id="step-4">
+          <h1>Finishing up</h1>
+          <h2>Double-check everything looks OK before confirming.</h2>
+          <section class="summary">
+            <section class="summary-plan">
+              <section class="summary-plan-details">
+                <h3></h3>
+                <label for="change-plan">Change
+                  <input type="radio" name="form-menu" id="change-plan">
+                </label>
+              </section>
+            </section>
+            <hr>
+            <span class="online-service"></span>
+            <span class="larger-storage"></span>
+            <span class="customizable-profile"></span>
+          </section>
+        </section>
 
-      </form>
+
+
       <section class="next">
         <label for="next-step-1">
           Next Step
@@ -153,58 +212,15 @@
           <input type="radio" name="form-menu" id="next-step-3">
         </label>
         <label for="next-step-4">
-          Next Step
+          Confirm
           <input type="radio" name="form-menu" id="next-step-4">
         </label>
       </section>
     </section>
+    </form>
   </main>
   <aside>
 
-
-    <!-- Step 1 start -->
-
-    <!-- Step 1 end -->
-
-    <!-- Step 2 start -->
-
-
-    Monthly
-    Yearly
-
-    Go Back
-    Next Step
-
-    <!-- Step 2 end -->
-
-    <!-- Step 3 start -->
-
-    Pick add-ons
-    Add-ons help enhance your gaming experience.
-
-    Online service
-    Access to multiplayer games
-    +$1/mo
-
-    Larger storage
-    Extra 1TB of cloud save
-    +$2/mo
-
-    Customizable Profile
-    Custom theme on your profile
-    +$2/mo
-
-    Go Back
-    Next Step
-
-    <!-- Step 3 end -->
-
-    <!-- Step 4 start -->
-
-    Finishing up
-    Double-check everything looks OK before confirming.
-
-    <!-- Dynamically add subscription and add-on selections here -->
 
     Total (per month/year)
 

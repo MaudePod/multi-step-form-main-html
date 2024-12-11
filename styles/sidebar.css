@@ -14,8 +14,8 @@ nav {
     background-size: cover;
     counter-reset: step-count;
     display: grid;
-    height: 95%;
-    width: 95%;
+    height: 98%;
+    width: 98%;
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(10, 10%);
 }

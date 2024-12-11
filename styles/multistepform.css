@@ -2,6 +2,8 @@ section[class="multistep-form"] {
     display: grid;
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(10, 10%);
+    max-width: 1440px;
+    max-height: 900px;
 }
 
 form,
@@ -144,7 +146,6 @@ section[class="step-2"]{
         padding:10px 20px 10px 20px;
         font-size: 1.2rem;
         border-radius: 10px;
-        display: grid;
         place-content: center;
         height: fit-content;
         margin-right: 30px;

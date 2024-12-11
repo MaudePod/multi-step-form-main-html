@@ -1,0 +1,71 @@
+section[class="summary"] {
+    grid-column: 2/10;
+    grid-row: 4/8;
+    display: grid;
+    gap: 10px;
+    background: var(--light-gray);
+}
+
+section[class="summary-plan"] {
+    display: grid;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+section[class="summary-plan-details"] {
+    display: grid;
+    width: 90%;
+    height: 80%;
+    place-self: center;
+    grid-template-areas: "plan cost"
+        "change-plan cost";
+    border-bottom: 1px solid var(--cool-gray);
+}
+
+label[for="change-plan"] {
+    color: var(--cool-gray);
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 1.4rem;
+    grid-area: change-plan;
+}
+
+section[class="summary-plan-details"] h3 {
+    color: var(--marine-blue);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+
+span[class="online-service"], 
+span[class="larger-storage"],
+span[class="customizable-profile"] { display: none;}
+
+main:has(input[id="month"]:checked) {
+
+    section[class="multistep-form"]:has(input[id="arcade"]:checked) {
+        section[class="summary-plan-details"]::after {
+            content: "$9/mo";
+            font-size: 1.5rem;
+            color: var(--marine-blue);
+            font-weight: 600;
+            justify-self: end;
+            align-self: center;
+            grid-area: cost;
+        }
+
+        section[class="summary-plan-details"] h3::before {
+            content: "Arcade (Monthly)";
+            font-weight: 600;
+            grid-area: plan;
+        }
+    }
+
+    section[class="multistep-form"]:has(input[id="advanced"]:checked) h3::after {
+        content: "$12/mo";
+    }
+
+    section[class="multistep-form"]:has(input[id="pro"]:checked) h3::after {
+        content: "$15/mo";
+    }
+}

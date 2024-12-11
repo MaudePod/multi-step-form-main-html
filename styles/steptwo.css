@@ -17,6 +17,7 @@ section[class="plans"] label {
     grid-template-rows: repeat(10, 10%);
     border-radius: 10px;
     background: var(--light-gray);
+    cursor: pointer;
 }
 
 section[class="plans"] label svg {
@@ -34,14 +35,6 @@ section[class="plans"] label h3 {
     font-size: 2rem;
     position: relative;
 }
-
-/* section[class="plans"] label span {
-    grid-column: 2/4;
-    grid-row: 8/9;
-    font-size: 1.6rem;
-    color: var(--cool-gray);
-    text-wrap: nowrap;
-} */
 
 section[class="month-year"] {
     grid-row: 8/-1;
@@ -80,10 +73,12 @@ section[class="time-period"]:has(input[id="year"]:checked) label[for="year"] {
 
 label[for="month"] {
     margin-left: 10px;
+    cursor: pointer;
 }
 
 label[for="year"] {
     margin-right: 10px;
+    cursor: pointer;
 }
 
 section[class="multistep-form"]:has(input[id="month"]:checked) {

@@ -2,5 +2,7 @@
 @import url(./styles/sidebar.css) layer(general);
 @import url(./styles/multistepform.css) layer(general);
 @import url(./styles/steptwo.css) layer(general);
+@import url(./styles/stepthree.css) layer(general);
+@import url(./styles/stepfour.css) layer(general);
 @import url(./styles/validation.css) layer(general);
 @import url(./styles/navigation.css) layer(general);
