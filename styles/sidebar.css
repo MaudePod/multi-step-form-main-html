@@ -5,8 +5,7 @@ section[class="sidebar"] {
     background: white;
     display: grid;
     place-items: center;
-    border-top-left-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
+    border-radius: var(--border-radius);
 }
 
 nav {
@@ -18,6 +17,7 @@ nav {
     width: 98%;
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(10, 10%);
+    border-radius: var(--border-radius);
 }
 
 section[class="step-container"] {
@@ -63,7 +63,7 @@ section[class="step-title"]::after {
     width: calc(2* var(--step-size-unit));
     content: counter(step-count);
     position: absolute;
-    border: 1px solid white;
+    border: 3px solid white;
     color: white;
     border-radius: 50%;
     left: calc(-2 * var(--step-size-unit) - 20px);
@@ -77,12 +77,12 @@ section[class="step-title"]::after {
         grid-template-columns: 1fr;
         grid-template-rows: max-content;
         grid-template-rows: 20cqh 90cqh;
+        transform: unset;
     }
 
     section[class="sidebar"] {
         height: 20svh;
-        border-top-left-radius: unset;
-        border-bottom-left-radius: unset;
+
     }
 
     nav {
@@ -95,6 +95,7 @@ section[class="step-title"]::after {
         grid-template-columns: unset;
         grid-template-rows: unset;
         grid-auto-flow: column;
+        border-radius: unset;
     }
 
     section[class="step-container"] {

@@ -53,6 +53,8 @@ input {
     border-radius: 15px;
     padding-inline-start: 20px;
     border-width: 1px;
+    border-color: var(--cool-gray);
+    accent-color: var(--purplish-blue);
 }
 
 input::placeholder {

@@ -41,14 +41,19 @@ body {
     container: body / inline-size;
     margin: 0;
     font-weight: 400;
+    background: var(--light-blue);
 }
 
 main {
     display: grid;
     width: 100cqw;
-    min-height: 100cqh;
+    min-height:100cqh;
     container: main / inline-size;
-    grid-template-columns: 30cqw 70cqw;
+    grid-template-columns: 30fr 70fr;
+    place-self: center;
+    background: white;
+    border-radius: var(--border-radius);
+    transform: scale(80%);
 }
 
 

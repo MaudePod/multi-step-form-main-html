@@ -4,7 +4,7 @@ section[class="plans"] {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 10px;
-    
+
 }
 
 input[name="plan"],
@@ -83,9 +83,9 @@ label[for="year"] {
 }
 
 section[class="multistep-form"]:has(input[id="month"]:checked) {
-    section[class="plans"] label[for="arcade"] h3::after {  
+    section[class="plans"] label[for="arcade"] h3::after {
         counter-reset: arcade-monthly var(--arcade-monthly);
-        content:"$" counter(arcade-monthly) "/mo";
+        content: "$" counter(arcade-monthly) "/mo";
         display: grid;
         font-size: 1.6rem;
         color: var(--cool-gray);
@@ -95,7 +95,7 @@ section[class="multistep-form"]:has(input[id="month"]:checked) {
 
     section[class="plans"] label[for="advanced"] h3::after {
         counter-reset: advanced-monthly var(--advanced-monthly);
-        content:"$" counter(advanced-monthly) "/mo";
+        content: "$" counter(advanced-monthly) "/mo";
         display: grid;
         font-size: 1.6rem;
         color: var(--cool-gray);
@@ -105,7 +105,7 @@ section[class="multistep-form"]:has(input[id="month"]:checked) {
 
     section[class="plans"] label[for="pro"] h3::after {
         counter-reset: pro-monthly var(--pro-monthly);
-        content:"$" counter(pro-monthly) "/mo";
+        content: "$" counter(pro-monthly) "/mo";
         display: grid;
         font-size: 1.6rem;
         color: var(--cool-gray);
@@ -128,7 +128,7 @@ span[class="2-months-free"] {
 section[class="multistep-form"]:has(input[id="year"]:checked) {
     section[class="plans"] label[for="arcade"] h3::after {
         counter-reset: arcade-yearly var(--arcade-yearly);
-        content:"$" counter(arcade-yearly) "/yr";
+        content: "$" counter(arcade-yearly) "/yr";
         display: grid;
         font-size: 1.6rem;
         color: var(--cool-gray);
@@ -138,7 +138,7 @@ section[class="multistep-form"]:has(input[id="year"]:checked) {
 
     section[class="plans"] label[for="advanced"] h3::after {
         counter-reset: advanced-yearly var(--advanced-yearly);
-        content:"$" counter(advanced-yearly) "/yr";
+        content: "$" counter(advanced-yearly) "/yr";
         display: grid;
         font-size: 1.6rem;
         color: var(--cool-gray);
@@ -148,7 +148,7 @@ section[class="multistep-form"]:has(input[id="year"]:checked) {
 
     section[class="plans"] label[for="pro"] h3::after {
         counter-reset: pro-yearly var(--pro-yearly);
-        content:"$" counter(pro-yearly) "/yr";
+        content: "$" counter(pro-yearly) "/yr";
         display: grid;
         font-size: 1.6rem;
         color: var(--cool-gray);
@@ -211,29 +211,29 @@ section[class="multistep-form"]:has(input[id="year"]:checked) {
 
     section[class="multistep-form"]:has(input[id="month"]:checked),
     section[class="multistep-form"]:has(input[id="year"]:checked) {
-    section[class="plans"] label[for="arcade"] h3::after {
-        font-size: 1.2rem;
+        section[class="plans"] label[for="arcade"] h3::after {
+            font-size: 1.2rem;
+        }
+
+        section[class="plans"] label[for="advanced"] h3::after {
+            font-size: 1.2rem;
+        }
+
+        section[class="plans"] label[for="pro"] h3::after {
+            font-size: 1.2rem;
+        }
     }
-    section[class="plans"] label[for="advanced"] h3::after {
-        font-size: 1.2rem;
-    }
-    section[class="plans"] label[for="pro"] h3::after {
-        font-size: 1.2rem;
-    }
-}
-    
+
     section[class="month-year"] {
         letter-spacing: unset;
     }
-    /* section[class="next"] {
-        bottom: -10cqh;
-    } */
 
     section[class="month-year"] {
         margin-top: 20px;
         border-radius: 10px;
     }
-    section[id="step-2"]{
+
+    section[id="step-2"] {
         padding: 5%;
     }
 }

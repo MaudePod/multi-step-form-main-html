@@ -48,7 +48,7 @@ section[class="multistep-form"]:has(input[id="phone-number"]:user-invalid) {
 
 main:has(section[id="step-1"] input:user-invalid) {
     label[class="step"]:nth-of-type(1) section[class="step-title"]::after {
-        border: 2px solid var(--strawberry-red);
+        border: 3px solid var(--strawberry-red);
         color: var(--strawberry-red);
         font-weight: 700;
     }
@@ -74,5 +74,137 @@ body:has(section[id="step-1"] input:invalid) {
         label[for="next-step-5"] {
             display: grid;
         }
+    }
+
+}
+
+section[class="multistep-form"]:has(input[id="email"]:not(:placeholder-shown):user-invalid) {
+
+    label[for="email"]::before {
+        content: 'Must be a valid email';
+        position: absolute;
+        color: var(--strawberry-red);
+        top: 0;
+        right: 0;
+        font-weight: 500;
+    }
+
+    input[id="email"] {
+        border-color: var(--strawberry-red);
+    }
+}
+
+section[class="multistep-form"]:has(input[id="phone-number"]:not(:placeholder-shown):user-invalid) {
+
+    label[for="phone-number"]::before {
+        content: '4 to 15 digits required';
+        position: absolute;
+        color: var(--strawberry-red);
+        top: 0;
+        right: 0;
+        font-weight: 500;
+    }
+
+    input[id="phone-number"] {
+        border-color: var(--strawberry-red);
+    }
+}
+
+body:has(input[id="next-step-5"]:checked) {
+    section[class="multistep-form"]:has(input[id="fullname"]:invalid) {
+
+        label[for="fullname"]::before {
+            content: 'This field is required';
+            position: absolute;
+            color: var(--strawberry-red);
+            top: 0;
+            right: 0;
+            font-weight: 500;
+        }
+
+        input[id="fullname"] {
+            border-color: var(--strawberry-red);
+        }
+    }
+
+    section[class="multistep-form"]:has(input[id="email"]:invalid) {
+
+        label[for="email"]::before {
+            content: 'This field is required';
+            position: absolute;
+            color: var(--strawberry-red);
+            top: 0;
+            right: 0;
+            font-weight: 500;
+        }
+
+        input[id="email"] {
+            border-color: var(--strawberry-red);
+        }
+    }
+
+    section[class="multistep-form"]:has(input[id="email"]:not(:placeholder-shown):invalid) {
+
+        label[for="email"]::before {
+            content: 'Must be a valid email';
+            position: absolute;
+            color: var(--strawberry-red);
+            top: 0;
+            right: 0;
+            font-weight: 500;
+        }
+
+        input[id="email"] {
+            border-color: var(--strawberry-red);
+        }
+    }
+
+    section[class="multistep-form"]:has(input[id="phone-number"]:invalid) {
+
+        label[for="phone-number"]::before {
+            content: 'This field is required';
+            position: absolute;
+            color: var(--strawberry-red);
+            top: 0;
+            right: 0;
+            font-weight: 500;
+        }
+
+        input[id="phone-number"] {
+            border-color: var(--strawberry-red);
+        }
+    }
+
+    section[class="multistep-form"]:has(input[id="phone-number"]:not(:placeholder-shown):invalid) {
+
+        label[for="phone-number"]::before {
+            content: '4 to 15 digits required';
+            position: absolute;
+            color: var(--strawberry-red);
+            top: 0;
+            right: 0;
+            font-weight: 500;
+        }
+
+        input[id="phone-number"] {
+            border-color: var(--strawberry-red);
+        }
+    }
+
+    main:has(section[id="step-1"] input:invalid) {
+        label[class="step"]:nth-of-type(1) section[class="step-title"]::after {
+            border: 3px solid var(--strawberry-red);
+            color: var(--strawberry-red);
+            font-weight: 700;
+        }
+
+        label[class="step"]:nth-of-type(1) section[class="step-title"]::before {
+            color: var(--strawberry-red);
+        }
+
+        label[class="step"]:nth-of-type(1) section[class="step-title"] {
+            color: var(--strawberry-red);
+        }
+
     }
 }
