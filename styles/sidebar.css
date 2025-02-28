@@ -31,12 +31,13 @@ input[name="form-menu"] {
     display: none;
 }
 
+
 label[class="step"] {
     display: grid;
     cursor: pointer;
     container: step-title / inline-size;
-    height: 100px;
-    width: 200px;
+    height: 80px;
+    width: 160px;
     counter-increment: step-count+1;
 }
 
@@ -134,5 +135,12 @@ section[class="step-title"]::after {
 
     section[class="step-title"]::after {
         position: unset;
+    }
+}
+@container body (inline-size > 1000px) {
+    nav{
+        box-sizing: border-box;
+        padding: 0px 40px;
+        margin-left: 20px;
     }
 }

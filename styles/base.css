@@ -46,14 +46,13 @@ body {
 
 main {
     display: grid;
-    width: 100cqw;
-    min-height:100cqh;
+    width: 1152px;
+    height: 720px;
     container: main / inline-size;
     grid-template-columns: 30fr 70fr;
     place-self: center;
     background: white;
     border-radius: var(--border-radius);
-    transform: scale(80%);
 }
 
 
@@ -72,8 +71,13 @@ svg[id="svgs"] {
     body {
         background: var(--pastel-blue);
     }
-
     div[class="attribution"] {
         display: none;
+    }
+    main {
+        display: grid;
+        width: 100cqw;
+        min-height:100cqh;
+        height: unset;
     }
 }

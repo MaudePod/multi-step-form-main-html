@@ -14,7 +14,7 @@ section[id^="step-"] {
 section[class="multistep-form"] h1 {
     grid-column: 2/10;
     grid-row: 2/10;
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 700;
     color: var(--marine-blue);
 }
@@ -75,6 +75,7 @@ label[for^="next-step-"] {
     height: 70%;
     cursor: pointer;
     user-select: none;
+    -webkit-user-select: none;
 }
 
 label[for^="back-step-"] {
@@ -88,6 +89,8 @@ label[for^="back-step-"] {
     height: 70%;
     cursor: pointer;
     user-select: none;
+    -webkit-user-select: none;
+    text-wrap: nowrap;
 }
 
 label[for="next-step-1"] {
@@ -185,4 +188,5 @@ section[class="step-2"] {
         margin-right: 30px;
         margin-top: 20px;
     }
+
 }
