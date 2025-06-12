@@ -25,6 +25,7 @@
   </style>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <main>
     <form action="">
@@ -33,25 +34,25 @@
       <section class="sidebar">
         <nav>
           <section class="step-container">
-            <label for="your-info" class="step">
+            <label for="your-info" class="step" tabindex="0">
               <input type="radio" name="form-menu" id="your-info" checked>
               <section class="step-title">
                 Your info
               </section>
             </label>
-            <label for="select-plan" class="step">
+            <label for="select-plan" class="step" tabindex="0">
               <input type="radio" name="form-menu" id="select-plan">
               <section class="step-title">
                 Select plan
               </section>
             </label>
-            <label for="add-ons" class="step">
+            <label for="add-ons" class="step" tabindex="0">
               <input type="radio" name="form-menu" id="add-ons">
               <section class="step-title">
                 Add-ons
               </section>
             </label>
-            <label for="summary" class="step">
+            <label for="summary" class="step" tabindex="0">
               <input type="radio" name="form-menu" id="summary">
               <section class="step-title">
                 Summary
@@ -78,7 +79,8 @@
             <input type="email" id="email" name="email" placeholder="e.g. stephenking@lorem.com" required>
           </label>
           <label for="phone-number">Phone Number
-            <input type="tel" name="phone-number" id="phone-number" pattern="[0-9]{4,15}" placeholder="e.g. +1 234 567 890" required>
+            <input type="tel" name="phone-number" id="phone-number" pattern="[0-9]{4,15}"
+              placeholder="e.g. +1 234 567 890" required>
           </label>
           <h2>
 
@@ -222,35 +224,35 @@
 
 
         <section class="next">
-          <label for="back-step-1">
+          <label for="back-step-1" tabindex="0">
             Go Back
             <input type="radio" name="form-menu" id="back-step-1">
           </label>
-          <label for="back-step-2">
+          <label for="back-step-2" tabindex="0">
             Go Back
             <input type="radio" name="form-menu" id="back-step-2">
           </label>
-          <label for="back-step-3">
+          <label for="back-step-3" tabindex="0">
             Go Back
             <input type="radio" name="form-menu" id="back-step-3">
           </label>
-          <label for="next-step-1">
+          <label for="next-step-1" tabindex="0">
             Next Step
             <input type="radio" name="form-menu" id="next-step-1">
           </label>
-          <label for="next-step-2">
+          <label for="next-step-2" tabindex="0">
             Next Step
             <input type="radio" name="form-menu" id="next-step-2">
           </label>
-          <label for="next-step-3">
+          <label for="next-step-3" tabindex="0">
             Next Step
             <input type="radio" name="form-menu" id="next-step-3">
           </label>
-          <label for="next-step-4">
+          <label for="next-step-4" tabindex="0">
             Confirm
             <input type="radio" name="form-menu" id="next-step-4">
           </label>
-          <label for="next-step-5">
+          <label for="next-step-5" tabindex="0">
             Incomplete
             <input type="radio" name="form-menu" id="next-step-5">
           </label>
@@ -265,6 +267,7 @@
   </div>
   <svg id="svgs">
     <symbol id="icon-arcade" viewBox="0 0 40 40">
+      <title>Arcade</title>
       <g fill="none" fill-rule="evenodd">
         <circle cx="20" cy="20" r="20" fill="#FFAF7E" />
         <path fill="#FFF" fill-rule="nonzero"
@@ -272,6 +275,7 @@
       </g>
     </symbol>
     <symbol id="icon-advanced" viewBox="0 0 40 40">
+      <title>Advanced</title>
       <g fill="none" fill-rule="evenodd">
         <circle cx="20" cy="20" r="20" fill="#F9818E" />
         <path fill="#FFF" fill-rule="nonzero"
@@ -279,6 +283,7 @@
       </g>
     </symbol>
     <symbol id="icon-pro" viewBox="0 0 40 40">
+      <title>Pro</title>
       <g fill="none" fill-rule="evenodd">
         <circle cx="20" cy="20" r="20" fill="#483EFF" />
         <path fill="#FFF" fill-rule="nonzero"
@@ -286,6 +291,7 @@
       </g>
     </symbol>
     <symbol id="icon-thank-you" viewBox="0 0 80 80">
+      <title>Thank you</title>
       <g fill="none">
         <circle cx="40" cy="40" r="40" fill="#F9818E" />
         <path fill="#E96170"
